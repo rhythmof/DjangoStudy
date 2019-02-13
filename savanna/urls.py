@@ -16,9 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from blog.views import hello, index
+from blog.views import year_conv
+
+from django.urls import register_converter
+from blog.convert import year_conv_do
+
+register_converter(year_conv_do,'year')
 
 urlpatterns = [
+    path('articles/<year:year>', year_conv),
     path('admin/', admin.site.urls),
-    path('blog/hello/<int:times>/', hello),
-    path('', index)
+    path('blog/hello/<int:times>/', hello), # path converter
+    path('', index), # = re_path(r'^$')
 ]
