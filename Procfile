@@ -1,0 +1,1 @@
+web: gunicorn savanna.wsgi --log-file -
