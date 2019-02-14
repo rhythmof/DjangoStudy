@@ -21,5 +21,5 @@ def naver_real_keyword(request):
     html = res.text
     soup = BeautifulSoup(html, 'html.parser')
     tag_list = soup.select('.PM_CL_realtimeKeyword_rolling .ah_k')
-    text = '<br/>\n'.join([tag.text for tab in tab_list])
+    text = '<br/>\n'.join([tag.text for tag in tag_list])
     return HttpResponse(text)
