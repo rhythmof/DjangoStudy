@@ -3,11 +3,11 @@ from django.http import HttpResponse
 
 def year_conv(request, year):
     # f: python 3.7부터 생긴 기능  (기존 format함수대체)
-    return HttpResponse(f''' 
+    return HttpResponse(f'''
         {year}에 대한 목록
     ''')
 
-def hello(request, times):
+def hello(request, times): # 키워드 인자 방식이므로 이름을 정확하게!
     message = "hi" * times
     return HttpResponse(message)
 

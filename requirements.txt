@@ -1,2 +1,5 @@
+# 필요한 library를 요 파일에 명시하면 heroku에서 알아서 install해줌
 django~=2.1.0
 gunicorn
+requests
+beautifulsoup4
