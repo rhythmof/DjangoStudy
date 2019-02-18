@@ -5,3 +5,9 @@ class Post(models.Model):
     content=models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+class Comment(models.Model):
+    auth_name = models.CharField(max_length=10)
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
